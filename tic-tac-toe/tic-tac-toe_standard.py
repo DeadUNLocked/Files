@@ -37,7 +37,7 @@ def play_game():
         valid_moves = get_valid_moves(board)
         while True:
             try:
-                move = int(input(f"Player {current_player} move (1-9): "\n-->)) - 1
+                move = int(input(f"Player {current_player} move (1-9): \n-->")) - 1
                 if move in valid_moves:
                     board[move] = current_player
                     break
