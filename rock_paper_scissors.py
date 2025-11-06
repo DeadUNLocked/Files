@@ -4,7 +4,7 @@ def get_computer_choice():
     return random.choice(['rock', 'paper', 'scissors'])
 
 def get_user_choice():
-    choice = input("Enter your choice (rock, paper, scissors): ").lower()
+    choice = input("Enter your choice (rock, paper, scissors):\n-->").lower()
     while choice not in ['rock', 'paper', 'scissors']:
         print("Invalid input.")
         choice = input("Enter your choice (rock, paper, scissors): ").lower()
@@ -20,7 +20,7 @@ def determine_winner(user, computer):
     else:
         return 'lose'
 
-def main():
+def play_game():
     print("=== Rock, Paper, Scissors ===")
     
     while True:
@@ -39,6 +39,14 @@ def main():
             break
         else:
             print("You lose!")
+            break
+
+def main():
+    while True:
+        play_game()
+        retry = input("Play again?\n-->")
+        if retry not in ("y", "yes"):
+            print("Exiting...")
             break
 
 if __name__ == "__main__":
