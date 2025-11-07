@@ -62,7 +62,7 @@ def play_game():
         valid_moves = get_valid_moves(board)
         while True:
             try:
-                player_move = int(input("Your move (1-9): ")) - 1
+                player_move = int(input("Your move (1-9):\n-->")) - 1
                 if player_move in valid_moves:
                     board[player_move] = "X"
                     break
@@ -95,7 +95,7 @@ def play_game():
 def main():
     while True:
         play_game()
-        again = input("\nPlay again? (y/n): ").strip().lower()
+        again = input("\nPlay again? (y/n):\n-->").strip().lower()
         if again not in ("y", "yes"):
             print("Thanks for playing Tic-Tac-Toe! Goodbye!")
             break
