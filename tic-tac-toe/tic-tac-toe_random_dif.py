@@ -101,6 +101,7 @@ def play_game():
         # --- Bot Move ---
         bot_choice = bot_move(board, difficulty)
         board[bot_choice] = "O"
+        print("Bot is thinking...")
         print(f"Bot moves to position {bot_choice + 1}:")
         print_board(board)
 
