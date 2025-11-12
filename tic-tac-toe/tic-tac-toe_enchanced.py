@@ -83,7 +83,7 @@ def play_game():
 
     # Ask for difficulty and validate input
     while True:
-        difficulty = input("Choose difficulty (easy / normal / hard): ").strip().lower()
+        difficulty = input("Choose difficulty (easy / normal / hard):\n-->").strip().lower()
         if difficulty in ["easy", "normal", "hard"]:
             break
         else:
@@ -99,7 +99,7 @@ def play_game():
         # --- Player's Turn ---
         while True:
             try:
-                player_move = int(input("Your move (1-9): ")) - 1
+                player_move = int(input("Your move (1-9):\n-->")) - 1
                 if player_move in valid_moves:
                     board[player_move] = "X"
                     break
@@ -123,6 +123,7 @@ def play_game():
         # --- Bot's Turn ---
         bot_choice = bot_move(board, difficulty)
         board[bot_choice] = "O"
+        print("Bot is thinking...")
         print(f"Bot moves to position {bot_choice + 1}:")
         print_board(board)
 
@@ -141,7 +142,7 @@ def main():
     print("Welcome to Tic-Tac-Toe!")
     while True:
         play_game()  # Play one round
-        again = input("\nDo you want to play again? (yes/no): ").strip().lower()
+        again = input("\nDo you want to play again? (yes/no):\n-->").strip().lower()
         if again not in ["yes", "y"]:
             print("Thanks for playing!")
             break  # Exit the loop and end the game
