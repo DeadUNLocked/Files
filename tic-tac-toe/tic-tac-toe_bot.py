@@ -82,6 +82,7 @@ def play_game():
         # Bot move
         bot_choice = bot_move(board)
         board[bot_choice] = "O"
+        print("Bot is thinking...")
         print(f"Bot moves to position {bot_choice + 1}:")
         print_board(board)
         if check_win(board, "O"):
